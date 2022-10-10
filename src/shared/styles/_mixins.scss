@@ -1,0 +1,20 @@
+@mixin flex($justify, $align: null, $column: null, $gap: null) {
+  display           : flex;
+  justify-content   : if($justify, #{$justify}, null);
+  align-items       : if($align, #{$align}, null);
+  flex-direction    : if($column, #{$column}, null);
+  gap               : if($gap, #{$gap}, null);
+}
+
+@mixin rec($width: 100%, $height: null) {
+  width             : $width;
+  height            : if($height, #{$height}, #{$width});
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position          : $position;
+  top               : if($top, #{$top}, null);
+  right             : if($right, #{$right}, null);
+  bottom            : if($bottom, #{$bottom}, null);
+  left              : if($left, #{$left}, null);
+}

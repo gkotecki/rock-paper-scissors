@@ -1,0 +1,33 @@
+@use 'public' as *;
+
+$insetShadowParams: 0px inset #00000033;
+
+:host {
+  @include flex(center, center);
+  @include rec(var(--btn-size));
+  padding: 20px;
+  border-radius: var(--btn-size);
+  box-shadow: 0 -6px $insetShadowParams;
+
+  &.rock {
+    background: linear-gradient(var(--rock-gradient));
+  }
+  &.paper {
+    background: linear-gradient(var(--paper-gradient));
+  }
+  &.scissors {
+    background: linear-gradient(var(--scissors-gradient));
+  }
+}
+
+.inner-circle {
+  @include flex(center, center);
+  @include rec();
+  background: white;
+  border-radius: var(--btn-size);
+  box-shadow: 0 6px $insetShadowParams;
+}
+
+img {
+  width: calc(var(--btn-size) * 0.4);
+}
