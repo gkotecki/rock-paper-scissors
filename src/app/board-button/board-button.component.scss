@@ -8,6 +8,12 @@ $insetShadowParams    : 0px inset #0003;
   padding             : 20px;
   border-radius       : var(--btn-size);
   box-shadow          : 0 -6px $insetShadowParams;
+  transition          : 0.3s;
+  cursor              : pointer;
+
+  &:hover {
+    padding           : 30px;
+  }
 
   &.rock {
     background        : linear-gradient(var(--rock-gradient));
@@ -33,7 +39,7 @@ $insetShadowParams    : 0px inset #0003;
 .inner-circle {
   @include flex(center, center);
   @include rec();
-  background          : white;
+  background          : #eee;
   border-radius       : var(--btn-size);
   box-shadow          : 0 6px $insetShadowParams;
 }
