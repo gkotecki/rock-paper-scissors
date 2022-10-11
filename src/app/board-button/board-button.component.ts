@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import { GameOption } from 'src/shared/services/game.service';
 
 @Component({
   selector: 'board-button',
@@ -9,13 +10,9 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
 export class BoardButtonComponent {
   @Input()
   @HostBinding('class')
-  public type: 'rock' | 'paper' | 'scissors' | undefined = null;
+  public type: GameOption = null;
 
   get imgSrc() {
-    return {
-      rock: 'assets/icon-rock.svg',
-      paper: 'assets/icon-paper.svg',
-      scissors: 'assets/icon-scissors.svg',
-    }[this.type];
+    return `assets/icon-${this.type}.svg`;
   }
 }

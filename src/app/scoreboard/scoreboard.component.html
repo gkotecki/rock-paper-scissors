@@ -1,0 +1,13 @@
+<header>
+  <span
+    *ngFor="let option of (game.availableOptions$ | async); count as count"
+    [style.font-size]="'calc(22px - ' + count + 'px)'"
+  >
+    {{ option | uppercase }}
+  </span>
+</header>
+
+<main>
+  <h6> SCORE </h6>
+  <h1> {{ game.score$ | async }} </h1>
+</main>

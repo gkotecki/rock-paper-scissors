@@ -1,7 +1,6 @@
+@use 'public' as *;
+
 :host {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
+  @include flex(center, center, true, 64px);
+  width   : 100%;
 }

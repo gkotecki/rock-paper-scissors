@@ -1,33 +1,44 @@
 @use 'public' as *;
 
-$insetShadowParams: 0px inset #00000033;
+$insetShadowParams    : 0px inset #0003;
 
 :host {
   @include flex(center, center);
   @include rec(var(--btn-size));
-  padding: 20px;
-  border-radius: var(--btn-size);
-  box-shadow: 0 -6px $insetShadowParams;
+  padding             : 20px;
+  border-radius       : var(--btn-size);
+  box-shadow          : 0 -6px $insetShadowParams;
 
   &.rock {
-    background: linear-gradient(var(--rock-gradient));
+    background        : linear-gradient(var(--rock-gradient));
   }
   &.paper {
-    background: linear-gradient(var(--paper-gradient));
+    background        : linear-gradient(var(--paper-gradient));
   }
   &.scissors {
-    background: linear-gradient(var(--scissors-gradient));
+    background        : linear-gradient(var(--scissors-gradient));
+  }
+  &.lizard {
+    background        : linear-gradient(var(--lizard-gradient));
+  }
+  &.spock {
+    background        : linear-gradient(var(--spock-gradient));
+
+    img {
+      left            : 6px; // Offsets shitty svg
+    }
   }
 }
 
 .inner-circle {
   @include flex(center, center);
   @include rec();
-  background: white;
-  border-radius: var(--btn-size);
-  box-shadow: 0 6px $insetShadowParams;
+  background          : white;
+  border-radius       : var(--btn-size);
+  box-shadow          : 0 6px $insetShadowParams;
 }
 
 img {
-  width: calc(var(--btn-size) * 0.4);
+  position            : relative;
+  width               : calc(var(--btn-size) * 0.4);
 }

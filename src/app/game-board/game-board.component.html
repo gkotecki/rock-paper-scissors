@@ -1,7 +1,5 @@
-<board-button type="rock" class="triangle-1"></board-button>
-
-<board-button type="paper" class="triangle-2"></board-button>
-
-<board-button type="scissors" class="triangle-3"></board-button>
-
-<board-button></board-button>
+<board-button
+  *ngFor="let option of (game.availableOptions$ | async); index as index"
+  [type]="option"
+  [style.transform]="getTransform(index)"
+></board-button>

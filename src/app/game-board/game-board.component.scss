@@ -1,25 +1,14 @@
+@use 'public' as *;
+
 :host {
-  position: relative;
-  display: block;
-  background: #999;
-  width: var(--board-size-x);
-  height: var(--board-size-y);
+  @include flex(center, center);
+  @include rec(var(--board-size));
+  margin          : calc(var(--btn-size) * 0.4) 0;
+  position        : relative;
+  border          : 20px solid #0003;
+  border-radius   : var(--board-size);
 }
 
-.triangle-1 {
-  position: absolute;
-  top: calc(var(--btn-size) * -0.5);
-  left: calc(var(--btn-size) * -0.5);
-}
-
-.triangle-2 {
-  position: absolute;
-  top: calc(var(--btn-size) * -0.5);
-  right: calc(var(--btn-size) * -0.5);
-}
-
-.triangle-3 {
-  position: absolute;
-  bottom: calc(var(--btn-size) * -0.5);
-  left: calc(var(--board-size-x) * 0.5 - var(--btn-size) * 0.5);
+board-button {
+  position        : absolute;
 }

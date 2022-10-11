@@ -1,0 +1,10 @@
+@use 'public' as *;
+
+:host {
+  @include flex(center, center, true, 16px)
+}
+
+h4 {
+  color         : white;
+  font-weight   : 500;
+}

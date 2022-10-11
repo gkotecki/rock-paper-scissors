@@ -1,0 +1,40 @@
+@use 'public' as *;
+
+:host {
+  @include flex(space-between, center, null, 16px);
+  padding             : 12px;
+  border              : 3px solid #fff3;
+  border-radius       : 6px;
+  width               : 300px;
+}
+
+header {
+  @include flex(null, null, true);
+  padding-left        : 8px;
+
+  span {
+    line-height       : 0.8;
+    font-weight       : 600;
+    font-size         : 20px;
+    color             : white;
+  }
+}
+
+main {
+  @include flex(center, center, true, 2px);
+  padding             : 12px;
+  min-width           : 72px;
+  border-radius       : 6px;
+  background          : white;
+
+  h6 {
+    font-weight       : 500;
+    color             : var(--score-text);
+    letter-spacing    : 1px;
+  }
+
+  h1 {
+    color             : var(--dark-text);
+    font-size         : 38px;
+  }
+}
