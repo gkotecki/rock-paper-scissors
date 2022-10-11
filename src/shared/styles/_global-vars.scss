@@ -15,7 +15,13 @@
   --radial-gradient     : hsl(214, 47%, 23%), hsl(237, 49%, 15%);
 
   // Buttons
-  --btn-size            : 200px;
-  --board-size-x        : 400px;
-  --board-size-y        : 340px;
+  --btn-size            : 140px;
+  --board-size          : 240px;
+}
+
+@media (width > 600px) {
+  :root {
+    --btn-size          : 190px;
+    --board-size        : 320px;
+  }
 }

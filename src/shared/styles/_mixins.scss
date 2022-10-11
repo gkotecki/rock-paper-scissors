@@ -2,7 +2,7 @@
   display           : flex;
   justify-content   : if($justify, #{$justify}, null);
   align-items       : if($align, #{$align}, null);
-  flex-direction    : if($column, #{$column}, null);
+  flex-direction    : if($column, column, null);
   gap               : if($gap, #{$gap}, null);
 }
 
