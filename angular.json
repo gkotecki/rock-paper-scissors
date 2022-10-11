@@ -105,6 +105,9 @@
           "options": {
             "browserTarget": "rock-paper-scissors:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
