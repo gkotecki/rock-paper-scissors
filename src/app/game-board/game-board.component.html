@@ -1,5 +1,6 @@
 <board-button
   *ngFor="let option of (game.availableOptions$ | async); index as index"
   [type]="option"
+  [winner]="index === 1"
   [style.transform]="getTransform(index)"
 ></board-button>

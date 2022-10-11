@@ -34,6 +34,13 @@ $insetShadowParams    : 0px inset #0003;
       left            : 6px; // Offsets shitty svg
     }
   }
+
+  &.winner {
+    box-shadow        : 0 -6px $insetShadowParams,
+                        0 0 0 calc(28px * 1) #ffffff08,
+                        0 0 0 calc(28px * 2) #ffffff08,
+                        0 0 0 calc(28px * 3) #ffffff08,
+  }
 }
 
 .inner-circle {
