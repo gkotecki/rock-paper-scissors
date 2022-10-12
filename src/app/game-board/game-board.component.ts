@@ -10,7 +10,12 @@ import { GameOption, GameService, GameState } from 'src/shared/services/game.ser
 export class GameBoardComponent {
   constructor(public game: GameService) {}
 
-  getTransform(index: number) {
+  /**
+   * Calculates button position by given index
+   *
+   * @param index List position
+   */
+  public getTransform(index: number) {
     const count = this.game.countControl.value;
     const degrees = (360 / count) * index + 90;
     const scale = 1 - (count - 3) * 0.1;
@@ -22,7 +27,12 @@ export class GameBoardComponent {
     `;
   }
 
-  selectOption(option: GameOption) {
+  /**
+   * Handles option selection event
+   *
+   * @param option Selected option
+   */
+  public selectOption(option: GameOption) {
     const { player1, player2 } = this.game.selectedOptions.controls;
     switch (this.game.state$.value) {
       case GameState.gameResult:

@@ -20,18 +20,30 @@ const animation = {
   ],
 })
 export class BoardButtonComponent {
+  /**
+   * Game option type
+   */
   @Input()
   @HostBinding('class')
   public type: GameOption = null;
 
+  /**
+   * Whether current button is a winner
+   */
   @Input()
   @HostBinding('class.winner')
   public winner = false;
 
+  /**
+   * Binds lifecycle animation to host
+   */
   @HostBinding('@inOutAnimation')
-  slideIn = true;
+  private slideIn = true;
 
-  get imgSrc() {
+  /**
+   * Returns img source from type
+   */
+  public get imgSrc() {
     return `assets/icon-${this.type}.svg`;
   }
 }
