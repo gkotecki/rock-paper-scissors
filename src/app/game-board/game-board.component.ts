@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { GameService } from 'src/shared/services/game.service';
+import { GameOption, GameService, GameState } from 'src/shared/services/game.service';
 
 @Component({
   selector: 'game-board',
@@ -20,5 +20,24 @@ export class GameBoardComponent {
       rotate(-${degrees}deg)
       scale(${scale})
     `;
+  }
+
+  selectOption(option: GameOption) {
+    const { player1, player2 } = this.game.selectedOptions.controls;
+    switch (this.game.state$.value) {
+      case GameState.gameResult:
+        player1.patchValue(option);
+        player2.reset();
+        this.game.state$.next(GameState.player2Turn);
+        break;
+      case GameState.player1Turn:
+        player1.patchValue(option);
+        this.game.state$.next(GameState.player2Turn);
+        break;
+      case GameState.player2Turn:
+        player2.patchValue(option);
+        this.game.state$.next(GameState.gameResult);
+        break;
+    }
   }
 }

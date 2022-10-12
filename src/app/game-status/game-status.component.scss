@@ -1,0 +1,14 @@
+@use 'public' as *;
+
+:host {
+  @include flex(center, center, true, 8px);
+}
+
+section {
+  @include autoGrid(1fr 1fr, 24px);
+}
+
+p {
+  letter-spacing    : 1px;
+}
+

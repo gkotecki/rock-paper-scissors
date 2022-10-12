@@ -7,6 +7,7 @@ import { BoardButtonComponent } from './board-button/board-button.component';
 import { GameBoardComponent } from './game-board/game-board.component';
 import { RangeInputComponent } from './range-input/range-input.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { GameStatusComponent } from './game-status/game-status.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
     GameBoardComponent,
     RangeInputComponent,
     ScoreboardComponent,
+    GameStatusComponent,
   ],
   imports: [
     BrowserAnimationsModule,

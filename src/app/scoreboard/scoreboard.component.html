@@ -9,5 +9,7 @@
 
 <main>
   <h6> SCORE </h6>
-  <h1> {{ game.score$ | async }} </h1>
+  <h1 *ngIf="(game.score$ | async) as score">
+    {{ score[0] }} - {{ score[1] }}
+  </h1>
 </main>

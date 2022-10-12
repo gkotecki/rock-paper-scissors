@@ -6,6 +6,13 @@
   gap               : if($gap, #{$gap}, null);
 }
 
+@mixin autoGrid($columns: 1fr, $gap: 16px) {
+  display           : grid;
+  grid-template     : auto / #{$columns};
+  gap               : #{$gap};
+  align-items       : center;
+}
+
 @mixin rec($width: 100%, $height: null) {
   width             : $width;
   height            : if($height, #{$height}, #{$width});

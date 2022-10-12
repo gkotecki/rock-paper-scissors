@@ -1,0 +1,10 @@
+<section *ngIf="(game.selectedOptions.valueChanges | async) as selectedOptions">
+  <h3> Player 1: {{ selectedOptions.player1 }} </h3>
+  <h3> Player 2: {{ selectedOptions.player2 }} </h3>
+</section>
+
+<ng-container *ngIf="(game.winnerData$ | async) as winnerData">
+  <h2 *ngIf="winnerData.playerIndex as index"> PLAYER {{ index }} VICTORY! </h2>
+
+  <p> {{ winnerData.option | titlecase }} {{ winnerData.text }} </p>
+</ng-container>
