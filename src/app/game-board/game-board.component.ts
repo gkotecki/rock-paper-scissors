@@ -28,6 +28,22 @@ export class GameBoardComponent {
   }
 
   /**
+   * Returns player selection class, when available
+   *
+   * @param option Button reference
+   */
+  public getPlayer(option: GameOption) {
+    const { player1, player2 } = this.game.selectedOptions.value;
+    if (option === player1 && option === player2) {
+      return 'draw';
+    } else if (option === player1) {
+      return 'player-1';
+    } else if (option === player2) {
+      return 'player-2';
+    }
+  }
+
+  /**
    * Handles option selection event
    *
    * @param option Selected option

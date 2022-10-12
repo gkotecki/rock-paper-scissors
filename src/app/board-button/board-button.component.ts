@@ -21,6 +21,12 @@ const animation = {
 })
 export class BoardButtonComponent {
   /**
+   * Current player selection class
+   */
+  @Input()
+  public playerClass: 'player-1' | 'player-2' | 'draw';
+
+  /**
    * Game option type
    */
   @Input()

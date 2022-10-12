@@ -92,7 +92,6 @@ export class GameService {
             const [playerIndex, option, text] = this.getWinner();
             this.winnerData$.next({ playerIndex, option, text });
           } else {
-            console.log('resetting winner');
             this.winnerData$.next(null);
           }
         })

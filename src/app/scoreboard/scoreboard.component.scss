@@ -31,9 +31,24 @@ main {
     color             : var(--score-text);
     letter-spacing    : 1px;
   }
+}
 
-  h1 {
-    color             : var(--dark-text);
-    font-size         : 38px;
+h1 span {
+  color               : var(--dark-text);
+  font-size           : 38px;
+  position            : relative;
+
+  &::before {
+    @include position(absolute, null, 2px, 0px, 2px);
+    height            : 4px;
+    content           : ' ';
+  }
+
+  &.player-1::before {
+    background        : rgba(blue, 0.5);
+  }
+
+  &.player-2::before {
+    background        : rgba(red, 0.5);
   }
 }

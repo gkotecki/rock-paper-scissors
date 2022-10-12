@@ -1,7 +1,8 @@
 <board-button
   *ngFor="let option of (game.availableOptions$ | async); index as index"
+  [style.transform]="getTransform(index)"
   [type]="option"
   [winner]="(game.winnerData$ | async)?.option === option"
-  [style.transform]="getTransform(index)"
+  [playerClass]="getPlayer(option)"
   (click)="selectOption(option)"
 ></board-button>
